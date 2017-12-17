@@ -1,0 +1,37 @@
+<div class="page-top" style="width: 100%; height: 20px; background-color: #1e1e1f"></div>
+<nav class="navbar navbar-light" style="background-color: #f5f9fc;">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand pointer" routerLink="/home">Waroong</a>
+		</div>
+
+		<div id="navbar">
+			<ul class="nav navbar-nav navbar-left">
+        <li><a mat-button routerLink="/book-list">BOOK</a></li>
+				<form (ngSubmit)="onSearchByTitle()" class="navbar-form">
+					<div class="form-group">
+						<input type="text" name="searcyByTitle" [(ngModel)]="keyword" class="form-control" placeholder="Book Title" />
+					</div>
+          <button type="submit" class="btn btn-default">Search</button>
+				</form>
+      </ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li *ngIf="!loggedIn">
+					<a mat-button routerLink="/myaccount">MY ACCOUNT</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button routerLink="/shopping-cart">SHOPPING CART</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button routerLink="/myprofile">MY PROFILE</a>
+				</li>
+				<li *ngIf="loggedIn">
+					<a mat-button (click)="logout()">LOGOUT</a>
+				</li>
+      </ul>
+
+		</div>
+	</div>
+</nav>
+
