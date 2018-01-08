@@ -1,5 +1,6 @@
 export class AppConst {
-	public static serverPath = 'http://127.0.0.1:8181';
+	// public static serverPath = 'http://127.0.0.1:8181';
+	public static serverPath = 'http://34.239.138.191';
 
 	public static usStates = {
 		"AL": "Alabama",
