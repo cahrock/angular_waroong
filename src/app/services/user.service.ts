@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: Http) { }
 
   newUser(username: string, email:string) {
-  	let url = this.serverPath+'/user/newuser';
+  	let url = this.serverPath+'/user/new-user';
   	let userInfo = {
   		"username" : username,
   		"email" : email
@@ -27,7 +27,7 @@ export class UserService {
   }
 
   retrievePassword(email:string) {
-  	let url = this.serverPath+'/user/forgetpassword';
+  	let url = this.serverPath+'/user/forget-password';
   	let userInfo = {
   		"email" : email
   	}

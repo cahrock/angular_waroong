@@ -13,6 +13,7 @@ export class NavBarComponent implements OnInit {
   private loggedIn = false;
   private keyword: string;
   private bookList:Book[] =[];
+  private name: string;
 
   constructor(
     private loginService: LoginService,

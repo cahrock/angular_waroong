@@ -55,17 +55,18 @@ export class MyAccountComponent implements OnInit {
   	this.emailExist = false;
   	this.emailSent = false;
 
-  	this.userService.newUser(this.username, this.email).subscribe(
-  		res => {
-  			console.log(res);
-  			this.emailSent = true;
-  		}, 
-  		error => {
-  			console.log(error.text());
-        let errorMessage = error.text();
-  			if(errorMessage==="usernameExist") this.usernameExist=true;
-  			if(errorMessage==="emailExist") this.emailExist=true;
-  		}
+		this.userService.newUser(this.username, this.email)
+			.subscribe(
+				res => {
+					console.log(res);
+					this.emailSent = true;
+				}, 
+				error => {
+					console.log(error.text());
+					let errorMessage = error.text();
+					if(errorMessage==="usernameExist") this.usernameExist=true;
+					if(errorMessage==="emailExist") this.emailExist=true;
+				}
   	);
   }
 
